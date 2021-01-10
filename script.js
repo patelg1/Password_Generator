@@ -23,12 +23,13 @@ function generatePassword(){
   var passLength = parseInt(prompt("How many characters would you like your password to contain? Choose between 8 and 128"));
   
   while(!parseInt(passLength)){
-    passLength = ("Invalid input! Please enter a number");
+    passLength = ("Invalid input! Please enter a number");    
   }
-}
-  if (passLength < 8 || passLength > 128){
+  while(passLength < 8 || passLength >128){
     passLength = parseInt(prompt("Please choose between 8 and 128"));
-  }else{
+  }
+
+  if (passLength >= 8 && passLength <= 128) {
     upperCase = confirm("Do you want upper case letters in password?");
     lowerCase = confirm("Do you want lower case letters in password?");
     numeric = confirm("Do you want numbers in password?");
@@ -41,3 +42,4 @@ function generatePassword(){
     numeric = confirm("Do you want numbers in password?");
     specialChar = confirm("Do you want special characters in password?");
   }
+}

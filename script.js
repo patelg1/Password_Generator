@@ -25,14 +25,11 @@ function generatePassword(){
   // Prompt asking user how many characters password should contain
   var passLength = parseInt(prompt("How many characters would you like your password to contain? Choose between 8 and 128"));
   // Checking to make sure user enters a number
-  while(!parseInt(passLength) || passLength < 8 || passLength > 128){
-    if (!parseInt(passLength)){
-      passLength = ("Invalid input! Please enter a number"); 
-    }else{
-      passLength = parseInt(prompt("Please choose between 8 and 128"));         
-    }  
+  while(!parseInt(passLength) || passLength < 8 || passLength > 128){    
+      alert("Invalid input! Please enter a number");    
+      passLength = parseInt(prompt("Please choose between 8 and 128"));    
   }
-
+  
   // Questions to confirm which criteria user wants to include in password
    var confirmUpperCase = confirm("Do you want upper case letters in password?");
    var confirmLowerCase = confirm("Do you want lower case letters in password?");
@@ -46,7 +43,7 @@ function generatePassword(){
    confirmNumeric = confirm("Do you want numbers in password?");
    confirmSpecialChar = confirm("Do you want special characters in password?");
   }
-  // Conditional checks to see which criteria user chose
+  // Conditional checks to see which criteria user has chosen
   if (confirmUpperCase === true){
     passChoices = passChoices.concat(upperCase);    
   }
@@ -59,6 +56,7 @@ function generatePassword(){
   if (confirmSpecialChar === true){
     passChoices = passChoices.concat(specialChar);
   }
+  console.log(passChoices);
   // Loop that takes the user's chosen criteria and randomly selects characters
   for (var i = 0; i < passLength; i++){
     passwordHolder = passwordHolder + passChoices[Math.floor(Math.random() * passChoices.length)];

@@ -7,9 +7,9 @@ This is an application that an user can use to generate a random password based 
 
 ## Installation
 
-Application Website URL:
+Application Website URL: https://patelg1.github.io/Password_Generator/
 
-Repository URL:
+Repository URL: https://github.com/patelg1/Password_Generator
 
 
 ## Usage 

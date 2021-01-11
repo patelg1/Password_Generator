@@ -46,5 +46,22 @@ function generatePassword(){
    confirmNumeric = confirm("Do you want numbers in password?");
    confirmSpecialChar = confirm("Do you want special characters in password?");
   }
-  
+  if (confirmUpperCase === true){
+    passChoices = passChoices.concat(upperCase);    
+  }
+  if (confirmLowerCase === true){
+    passChoices = passChoices.concat(lowerCase);
+  }
+  if (confirmNumeric === true){
+    passChoices = passChoices.concat(numeric);
+  }
+  if (confirmSpecialChar === true){
+    passChoices = passChoices.concat(specialChar);
+  }
+
+  for (var i = 0; i < passLength; i++){
+    passwordHolder = passwordHolder + passChoices[Math.floor(Math.random() * passChoices.length)];
+        
+  } 
+  return passwordHolder;
 }

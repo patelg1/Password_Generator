@@ -43,6 +43,7 @@ function generatePassword(){
    confirmNumeric = confirm("Do you want numbers in password?");
    confirmSpecialChar = confirm("Do you want special characters in password?");
   }
+  passChoices = [];
   // Conditional checks to see which criteria user has chosen
   if (confirmUpperCase === true){
     passChoices = passChoices.concat(upperCase);    
